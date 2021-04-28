@@ -1,5 +1,18 @@
 import { Component } from '@angular/core';
-import { WeatherService } from './services/weather.service';
+
+export class Weather {
+  city!: string;
+  conditions!: string;
+  temperature!: number;
+  icon!: string;
+}
+
+export class City {
+  city!: string;
+  lat!: number;
+  lon!: number;
+  country!: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -7,15 +20,9 @@ import { WeatherService } from './services/weather.service';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'forecastApp';
-  public weather: Array<any> = []
+  title = 'Weather';
+  public weather: Array<any> = [];
+  public city: Array<any> = [];
 
-  constructor(
-    private weatherService: WeatherService
-   ){
-     this.weatherService.getAllWeather().subscribe((resp: any)=>{
-       console.log(resp)
-       this.weather = resp
-    })
-  }
+  constructor() { }
 }
