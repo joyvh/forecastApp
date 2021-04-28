@@ -18,6 +18,6 @@ export class WeatherDataService {
     return this.http.get(serviceUrl + '?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&exclude=hourly,minutely&units=imperial');
   }
   getIconUrl(icon: string): string {
-    return 'http://openweathermap.org/img/w/' + icon + '.png';
+    return 'http://openweathermap.org/img/wn/' + icon + '@2x.png';
   }
 }

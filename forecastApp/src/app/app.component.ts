@@ -1,10 +1,38 @@
 import { Component } from '@angular/core';
 
 export class Weather {
-  city!: string;
-  conditions!: string;
-  temperature!: number;
+  current!: Current;
+  daily!: Daily;
+}
+
+export class Current {
+  temp!: number;
+  sensation!: number;
+  humidity!: number;
+  cloudiness!: number;
+  uv!: number;
+  weatherDescription!: Description;
+}
+
+export class Description {
+  id!: number;
+  main!: string;
+  desc!: string;
   icon!: string;
+}
+
+export class Daily {
+  temp!: Temp;
+  humidity!: number;
+  weatherDescription!: Description;
+  cloudiness!: number;
+  uv!: number;
+}
+
+export class Temp {
+  day!: number;
+  min!: number;
+  max!: number;
 }
 
 export class City {
